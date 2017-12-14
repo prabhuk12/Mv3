@@ -1,0 +1,16 @@
+#Changing File Content for engine
+#Wed Dec 13 09:44:11 EST 2017
+CONNECTION_URL=jdbc\:h2\:nio\:@BaseFolder@/db/@ENGINE@/database;query_timeout\=180000;early_filter\=true;query_cache_size\=24;cache_size\=32768
+ENGINE_TYPE=prerna.engine.impl.rdbms.RDBMSNativeEngine
+SOLR_RELOAD=false
+RDBMS_INSIGHTS=db/@engine@/insights_database
+ENGINE=Mv3
+Base=Properties 
+OWL=db/@engine@/Mv2_OWL.OWL
+PIXEL_UPDATE	true
+DRIVER=org.h2.Driver
+RDBMS_TYPE=H2_DB
+USERNAME=sa
+USE_OUTER_JOINS=false
+HIDDEN_DATABASE=false
+PASSWORD=

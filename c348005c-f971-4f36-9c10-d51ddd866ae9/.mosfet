@@ -1,0 +1,7 @@
+{
+  "layout": "Grid",
+  "rdbmsId": "c348005c-f971-4f36-9c10-d51ddd866ae9",
+  "engine": "Mv3",
+  "insightName": "Nominated List",
+  "recipe": "AddPanel ( 0 ) ;\nPanel ( 0 ) | AddPanelEvents ( { \"onSingleClick\" : { \"Unfilter\" : [ { \"panel\" : \"\" , \"query\" : \"\u003cencode\u003eUnfilterFrame(\u003cSelectedColumn\u003e);\u003c/encode\u003e\" , \"options\" : { } , \"refresh\" : true , \"default\" : true , \"disabled\" : false } ] } , \"onBrush\" : { \"Filter\" : [ { \"panel\" : \"\" , \"query\" : \"\u003cencode\u003eif(IsEmpty(\u003cSelectedValues\u003e), UnfilterFrame(\u003cSelectedColumn\u003e), SetFrameFilter(\u003cSelectedColumn\u003e\u003d\u003d\u003cSelectedValues\u003e));\u003c/encode\u003e\" , \"options\" : { } , \"refresh\" : true , \"default\" : true , \"disabled\" : false } ] } } ) ;\nPanel ( 0 ) | RetrievePanelEvents ( ) ;\nPanel ( 0 ) | SetPanelView ( \"visualization\" , \"\u003cencode\u003e{\"type\":\"echarts\"}\u003c/encode\u003e\" ) ;\nPanel ( 0 ) | SetPanelView ( \"federate-view\" ) ;\nCreateFrame ( grid ) .as ( [ \u0027FRAME854364\u0027 ] ) ;\nDatabase ( Mv3 ) | Select ( Nominated ) .as ( [ Nominated ] ) | Import ( ) ;\nPanel ( 0 ) | SetPanelView ( \"visualization\" ) ;\nFrame ( ) | Select ( Nominated ) .as ( [ Nominated ] ) | With ( Panel ( 0 ) ) | Format ( type \u003d [ \u0027table\u0027 ] ) | TaskOptions ( { \"0\" : { \"layout\" : \"Grid\" , \"alignment\" : { \"label\" : [ \"Nominated\" ] } } } ) | Collect ( 500 ) ;\nPanel(0)|AddPanelOrnaments({\"showMenu\":true});Panel(0)|RetrievePanelOrnaments(\"showMenu\");\n"
+}
